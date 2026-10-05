@@ -1,0 +1,17 @@
+# Local dependencies and generated caches
+node_modules/
+__pycache__/
+*.py[cod]
+.vite/
+.pytest_cache/
+
+# Machine-specific files and credentials
+.env
+.env.*
+!.env.example
+*.log
+*.db
+*.sqlite
+*.sqlite3
+.DS_Store
+Thumbs.db
