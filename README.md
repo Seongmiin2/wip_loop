@@ -6,11 +6,11 @@
 
 완성본 `web/`을 정적 웹사이트로 배포할 수 있습니다. 방문하는 PC에는 Python, Node.js, 배치 파일이 필요하지 않으며 Edge 또는 Chrome으로 배포 주소를 열면 됩니다. 인터넷 연결과 해당 사이트에 대한 접근 권한은 필요합니다.
 
-- 일반 전시: 배포 주소의 `/#dashboard`
-- 대형 화면: 배포 주소의 `/?monitor=1#dashboard`에 접속한 뒤 F11
+- 일반 전시: https://wip-loop-amr-exhibition.ksm9604mm.chatgpt.site/#dashboard
+- 대형 화면: https://wip-loop-amr-exhibition.ksm9604mm.chatgpt.site/?monitor=1#dashboard 에 접속한 뒤 F11
 - 시뮬레이션은 각 브라우저에서 독립적으로 동작합니다. 새로고침하면 초기화되며 다른 PC와 상태가 공유되지 않습니다.
 
-Sites 배포 설정은 `.openai/hosting.json`에 있습니다. 배포 전에 `node scripts/prepare-web-deploy.mjs`를 실행하면 완성본 `web/`을 게시 폴더 `dist/`에 복사합니다. 최초 Sites 배포는 소유자 전용입니다. 다른 사용자나 로그인 없이 접속하려면 사이트의 접근 설정을 별도로 변경해야 합니다.
+현재 웹사이트는 공개 상태이며 로그인 없이 접속할 수 있습니다. Sites 배포 설정은 `.openai/hosting.json`에 있습니다. 배포 전에 `node scripts/prepare-web-deploy.mjs`를 실행하면 완성본 `web/`을 게시 폴더 `dist/`에 복사합니다. GitHub에 코드를 올리는 것만으로 Sites가 자동 갱신되지는 않으며, 수정한 화면은 Sites에 별도로 배포해야 합니다.
 
 다른 정적 호스팅을 사용할 때도 게시 폴더는 `web/`입니다. 현재 리소스 경로는 `/assets/`, `/fonts/`, `/brand/`처럼 사이트 루트를 기준으로 하므로 도메인의 루트 경로에 배포하세요. 소스 변경 후에는 `source/`에서 `npm ci`, `npm run build`를 실행한 뒤 갱신된 `web/`을 배포합니다.
 
@@ -87,16 +87,16 @@ Sites 배포 설정은 `.openai/hosting.json`에 있습니다. 배포 전에 `no
 
 ## GitHub에서 받기
 
-저장소: https://github.com/Seongmiin2/monitoring_amr
+저장소: https://github.com/Seongmiin2/wip_loop
 
-GitHub의 **Code → Download ZIP**으로 받은 후 압축을 풀고 `전시_시작.bat`을 실행합니다. 압축을 푼 폴더 이름이 `monitoring_amr-main`이어도 그대로 실행됩니다.
+웹으로 이용할 때는 위의 전시 주소를 열면 됩니다. 로컬 실행이 필요한 경우 GitHub의 **Code → Download ZIP**으로 받은 후 압축을 풀고 `전시_시작.bat`을 실행합니다. 압축을 푼 폴더 이름이 `wip_loop-main`이어도 그대로 실행됩니다.
 
 Git을 사용하는 경우:
 
 ```powershell
-git clone https://github.com/Seongmiin2/monitoring_amr.git
-cd monitoring_amr
+git clone https://github.com/Seongmiin2/wip_loop.git
+cd wip_loop
 .\전시_시작.bat
 ```
 
-완성본 `web`이 포함되어 있어 실행 전에 npm 설치나 빌드는 필요하지 않습니다. GitHub 저장소 업로드와 웹사이트 호스팅은 별개이며, 이 실행본은 로컬 전시용입니다.
+완성본 `web`이 포함되어 있어 로컬 실행 전에 npm 설치나 빌드는 필요하지 않습니다. 웹 전시와 로컬 전시 모두 같은 완성본을 사용합니다.
