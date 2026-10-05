@@ -1,5 +1,6 @@
 # Local dependencies and generated caches
 node_modules/
+dist/
 __pycache__/
 *.py[cod]
 .vite/
